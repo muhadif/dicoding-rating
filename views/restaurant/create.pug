@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    .row
+        h2.h2 Tambah restoran baru
+    .row
+        form(action='/create' method='post' style='width:50%')
+            .form-group
+                label(for='inputRestoran') Nama Restoran
+                input#inputRestoran.form-control(type='text', name='name', placeholder='Masukan nama restoran')
+            .form-group
+                label(for='inputAddress') Alamat
+                input#inputAddress.form-control(type='text', name='address', placeholder='Masukan alamat restoran')
+            .form-group
+                label(for='inputRating') Nilai
+                input#inputRating.form-control(type='number', name='rating', placeholder='Masukan nilai restoran')
+            .form-group
+                button(type=submit).btn.btn-primary Simpan
+

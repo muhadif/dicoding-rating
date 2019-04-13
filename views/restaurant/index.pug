@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+    .row
+        .col-md-11
+            h2.h2 Daftar Restaurant
+        .col-md-1
+            a(href='/create').btn.pmd-btn-fab.pmd-ripple-effect.btn-outline-secondary
+                i.material-icons.pmd-sm add
+
+
+    table.table.table-hover
+        thead
+            tr
+                th(scope='col') #
+                th(scope='col') Nama Restaurant
+                th(scope='col') Alamat
+                th(scope='col') Rating
+                th(scope='col') Aksi
+        tbody
+            each restaurant, index in restaurants
+                tr
+                    th(scope='row')= index+1
+                    td= restaurant.name
+                    td= restaurant.address
+                    td= restaurant.rating
+                    td
+                        a(href='/' + restaurant.id + '/edit' ).btn.btn-success.text-white Ubah
+                        form(action='/' + restaurant.id + '/delete' method='post')
+                            button(type=submit).btn.btn-danger Hapus
+
+
+

@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    .row
+        h2.h2 Edit restoran
+    .row
+        form(action='/' + restaurant.id + '/edit' method='post' style='width:50%')
+            .form-group
+                label(for='inputRestoran') Nama Restoran
+                input#inputRestoran.form-control(type='text', name='name', placeholder='Masukan nama restoran' value=restaurant.name )
+            .form-group
+                label(for='inputAddress') Alamat
+                input#inputAddress.form-control(type='text', name='address', placeholder='Masukan alamat restoran' value=restaurant.address)
+            .form-group
+                label(for='inputRating') Nilai
+                input#inputRating.form-control(type='number', name='rating', placeholder='Masukan nilai restoran' value=restaurant.rating)
+            .form-group
+                button(type=submit).btn.btn-primary Perbarui
+
